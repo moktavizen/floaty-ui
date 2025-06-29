@@ -52,8 +52,8 @@
     "property": "mod.floaty.findbar-top-margin",
     "label": "Findbar Top Margin",
     "type": "string",
-    "placeholder": "100px",
-    "defaultValue": "100px"
+    "placeholder": "64px",
+    "defaultValue": "64px"
   },
   {
     "property": "mod.floaty.findbar-max-width",
