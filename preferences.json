@@ -50,16 +50,16 @@
   },
   {
     "property": "mod.floaty.findbar-top-margin",
-    "label": "Floating Findbar Top Margin",
+    "label": "Findbar Top Margin",
     "type": "string",
     "placeholder": "100px",
     "defaultValue": "100px"
   },
   {
     "property": "mod.floaty.findbar-max-width",
-    "label": "Sidebar & Topbar Animation Speed",
+    "label": "Findbar Width",
     "type": "string",
-    "placeholder": "150ms",
-    "defaultValue": "150ms"
+    "placeholder": "1060px",
+    "defaultValue": "1060px"
   }
 ]

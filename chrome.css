@@ -246,7 +246,7 @@
       border: var(--floaty-border-style) !important;
       border-radius: var(--floaty-border-radius) !important;
       box-shadow: var(--zen-big-shadow) !important;
-      max-width: var(--mod-floaty-findbar-max-width) !important;
+      max-width: var(--floaty-findbar-max-width) !important;
       position: fixed !important;
       inset: var(--floaty-findbar-top-margin) var(--floaty-margin) auto !important;
       margin-inline-start: auto !important;
