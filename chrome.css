@@ -5,7 +5,7 @@
   --floaty-opacity: 0.72;
   --floaty-blur-radius: 32px;
   --floaty-blur-saturation: 128%;
-  --floaty-margin: 8px;
+  --floaty-margin: var(--mod-floaty-margin);
   --floaty-findbar-top-margin: var(--mod-floaty-findbar-top-margin);
   --floaty-findbar-max-width: var(--mod-floaty-findbar-max-width);
   --floaty-toolbox-padding: 0.35rem;
