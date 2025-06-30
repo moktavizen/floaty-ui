@@ -156,6 +156,12 @@
         padding: var(--floaty-separation-margin) !important;
         padding-bottom: var(--floaty-margin) !important;
         padding-top: calc(var(--floaty-separation-margin) + 1px) !important;
+
+        &:not([zen-has-hover="true"]) {
+          #urlbar:not([breakout-extend="true"]) {
+            pointer-events: none !important;
+          }
+        }
       }
 
       #zen-appcontent-navbar-container {
@@ -187,27 +193,11 @@
         padding-inline: var(--floaty-toolbox-padding) !important;
       }
 
-      #urlbar {
-        &[breakout-extend="true"]:not([zen-floating-urlbar="true"]) {
-          top: calc(
-            var(--floaty-separation-margin) +
-            var(--floaty-toolbox-padding)
-          ) !important;
-        }
-
-        &:not([breakout-extend="true"]):not([focused]) {
-          top: -100px !important;
-        }
-      }
-
-      #zen-appcontent-navbar-wrapper {
-        &[zen-has-hover="true"],
-        &[has-popup-menu],
-        &:has(#PlacesChevron[open="true"]) {
-          #urlbar:not([breakout-extend="true"]) {
-            top: auto !important;
-          }
-        }
+      #urlbar[breakout-extend="true"]:not([zen-floating-urlbar="true"]) {
+        top: calc(
+          var(--floaty-separation-margin) +
+          var(--floaty-toolbox-padding)
+        ) !important;
       }
     }
   }
