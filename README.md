@@ -50,6 +50,8 @@ Floating Mode for Zen Browser! This mod will turn Compact Mode into Floating Mod
 
 ## Uninstall
 
-1. Go to `Settings > Zen Mods > Remove Theme`
-2. Delete the mod entry in `zen-theme.json` and `userChrome.css` if needed
+### Manual
 
+1. Go to `Settings > Zen Mods > Remove Theme`
+2. Delete the mod entry in `zen-theme.json` and `userChrome.css`
+3. Delete `mod-floaty-ui folder`
