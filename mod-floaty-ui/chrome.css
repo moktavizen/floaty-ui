@@ -79,6 +79,10 @@
           box-shadow: var(--zen-big-shadow) !important;
           outline: none !important;
         }
+
+        &::after {
+          mix-blend-mode: normal !important;
+        }
       }
     }
   }
@@ -132,7 +136,19 @@
           content: "" !important;
           position: absolute !important;
           inset: 0px !important;
+          mix-blend-mode: normal !important;
+          opacity: 1 !important;
           z-index: -1 !important;
+        }
+
+        &::after {
+          content: "" !important;
+          position: absolute !important;
+          inset: 0 !important;
+          background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
+          pointer-events: none !important;
+          z-index: 0 !important;
+          opacity: var(--zen-grainy-background-opacity, 0) !important;
         }
       }
 
@@ -180,7 +196,19 @@
           content: "" !important;
           position: absolute !important;
           inset: 0px !important;
+          mix-blend-mode: normal !important;
+          opacity: 1 !important;
           z-index: -1 !important;
+        }
+
+        &::after {
+          content: "" !important;
+          position: absolute !important;
+          inset: 0 !important;
+          background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
+          pointer-events: none !important;
+          z-index: 0 !important;
+          opacity: var(--zen-grainy-background-opacity, 0) !important;
         }
       }
 
@@ -207,6 +235,16 @@
   #urlbar[breakout-extend="true"] > #urlbar-background {
     background: var(--floaty-bg-color) !important;
     backdrop-filter: var(--floaty-blur-filter) !important;
+
+    &::after {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
+      pointer-events: none !important;
+      z-index: 0 !important;
+      opacity: var(--zen-grainy-background-opacity, 0) !important;
+    }
   }
 
   .urlbarView-body-inner {
@@ -228,6 +266,16 @@
       margin-inline-start: auto !important;
       padding: var(--floaty-toolbox-padding) !important;
       transition: none !important;
+
+      &::after {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
+        pointer-events: none !important;
+        z-index: 0 !important;
+        opacity: var(--zen-grainy-background-opacity, 0) !important;
+      }
     }
 
     .findbar-container,
@@ -258,6 +306,16 @@
       box-shadow: var(--zen-big-shadow) !important;
       padding-inline: 9px !important;
       margin: var(--floaty-margin) !important;
+
+      &::after {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
+        pointer-events: none !important;
+        z-index: 0 !important;
+        opacity: var(--zen-grainy-background-opacity, 0) !important;
+      }
     }
   }
 }
