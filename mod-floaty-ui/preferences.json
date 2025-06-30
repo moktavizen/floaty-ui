@@ -24,14 +24,14 @@
     "defaultValue": true
   },
   {
-    "property": "mod.floaty.enable-opacity",
-    "label": "Background Transparency",
+    "property": "mod.floaty.enable-blur",
+    "label": "Background Blur",
     "type": "checkbox",
     "defaultValue": true
   },
   {
-    "property": "mod.floaty.enable-blur",
-    "label": "Background Blur",
+    "property": "mod.floaty.enable-opacity",
+    "label": "Background Transparency",
     "type": "checkbox",
     "defaultValue": true
   },
