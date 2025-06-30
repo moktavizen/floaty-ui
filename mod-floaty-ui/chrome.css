@@ -1,8 +1,6 @@
 /* Only apply this CSS in Compact Mode */
 :root[zen-compact-mode="true"]:not([customizing]) {
-  --floaty-light-color: #ebebeb;
-  --floaty-dark-color: #1e1e1e;
-  --floaty-opacity: 0.72;
+  --floaty-bg-color: var(--zen-main-browser-background);
   --floaty-blur-radius: 32px;
   --floaty-blur-saturation: 128%;
   --floaty-margin: var(--mod-floaty-margin);
@@ -12,18 +10,6 @@
   --floaty-border-width: 1px;
   --floaty-border-radius: 12px;
 
-  --floaty-light-alpha: rgb(
-    from var(--floaty-light-color) r g b /
-    var(--floaty-opacity)
-  );
-  --floaty-dark-alpha: rgb(
-    from var(--floaty-dark-color) r g b /
-    var(--floaty-opacity)
-  );
-  --floaty-bg-color: light-dark(
-    var(--floaty-light-alpha),
-    var(--floaty-dark-alpha)
-  );
   --floaty-blur-filter: blur(var(--floaty-blur-radius))
     saturate(var(--floaty-blur-saturation));
   --floaty-border-style: var(--floaty-border-width) solid
