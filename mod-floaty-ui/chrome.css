@@ -149,6 +149,7 @@
           pointer-events: none !important;
           z-index: 0 !important;
           opacity: var(--zen-grainy-background-opacity, 0) !important;
+          border-radius: var(--floaty-border-radius) !important;
         }
       }
 
@@ -209,6 +210,7 @@
           pointer-events: none !important;
           z-index: 0 !important;
           opacity: var(--zen-grainy-background-opacity, 0) !important;
+          border-radius: var(--floaty-border-radius) !important;
         }
       }
 
@@ -244,6 +246,7 @@
       pointer-events: none !important;
       z-index: 0 !important;
       opacity: var(--zen-grainy-background-opacity, 0) !important;
+      border-radius: var(--floaty-border-radius) !important;
     }
   }
 
@@ -275,6 +278,7 @@
         pointer-events: none !important;
         z-index: 0 !important;
         opacity: var(--zen-grainy-background-opacity, 0) !important;
+        border-radius: var(--floaty-border-radius) !important;
       }
     }
 
@@ -315,7 +319,7 @@
         pointer-events: none !important;
         z-index: 0 !important;
         opacity: var(--zen-grainy-background-opacity, 0) !important;
-        border-radius: inherit !important;
+        border-radius: var(--floaty-border-radius) !important;
       }
     }
 
