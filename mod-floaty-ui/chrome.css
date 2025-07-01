@@ -50,6 +50,15 @@
   @media not (-moz-bool-pref: "mod.floaty.use-blur") {
     --floaty-blur-filter: none;
   }
+
+  @media not (-moz-bool-pref: "mod.floaty.use-transparency") {
+    --floaty-bg-color: var(--zen-main-browser-background-toolbar);
+
+    &:not([zen-should-be-dark-mode]) {
+      --floaty-bg-color: #1e1e1e;
+    }
+  }
+
   /* Enable blur on Compact Mode */
   .browserSidebarContainer {
     will-change: transform !important;
