@@ -42,11 +42,18 @@
     1px
   );
 
+  /* Fallback when there are no colors from zen theme */
+  &:not([zen-should-be-dark-mode]) {
+    --floaty-bg-color: #1e1e1eb8;
+  }
+
   /* Enable blur on Compact Mode */
   .browserSidebarContainer {
     will-change: transform !important;
     backface-visibility: hidden !important;
   }
+
+  /* THEME -------------------------------------------------------------------*/
 
   /* SIDEBAR ---------------------------------------------------------------- */
 
