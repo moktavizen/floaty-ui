@@ -50,7 +50,7 @@
 
   /* SIDEBAR ---------------------------------------------------------------- */
 
-  @media (-moz-bool-pref: "mod.floaty.enable-sidebar") {
+  @media (-moz-bool-pref: "mod.floaty.use-floating-sidebar") {
     @media (-moz-bool-pref: "zen.view.use-single-toolbar") or (-moz-bool-pref: "zen.view.compact.hide-tabbar") {
       #navigator-toolbox {
         padding: var(--floaty-sidebar-margin) !important;
@@ -89,7 +89,7 @@
 
   /* TOPBAR ----------------------------------------------------------------- */
 
-  @media (-moz-bool-pref: "mod.floaty.enable-topbar") {
+  @media (-moz-bool-pref: "mod.floaty.use-floating-topbar") {
     @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
       #zen-appcontent-navbar-wrapper {
         box-sizing: border-box !important;
@@ -256,7 +256,7 @@
 
   /* FIND BAR --------------------------------------------------------------- */
 
-  @media (-moz-bool-pref: "mod.floaty.enable-findbar") {
+  @media (-moz-bool-pref: "mod.floaty.use-floating-findbar") {
     findbar {
       background: var(--floaty-bg-color) !important;
       backdrop-filter: var(--floaty-blur-filter) !important;
@@ -301,7 +301,7 @@
 
   /* STATUS PANEL ----------------------------------------------------------- */
 
-  @media (-moz-bool-pref: "mod.floaty.enable-statuspanel") {
+  @media (-moz-bool-pref: "mod.floaty.use-floating-statuspanel") {
     #statuspanel {
       background: var(--floaty-bg-color) !important;
       backdrop-filter: var(--floaty-blur-filter) !important;

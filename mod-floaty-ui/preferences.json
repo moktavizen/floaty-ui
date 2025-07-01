@@ -1,42 +1,42 @@
 [
   {
-    "property": "mod.floaty.enable-sidebar",
+    "property": "mod.floaty.use-floating-sidebar",
     "label": "Floating Sidebar",
     "type": "checkbox",
     "defaultValue": true
   },
   {
-    "property": "mod.floaty.enable-topbar",
+    "property": "mod.floaty.use-floating-topbar",
     "label": "Floating Topbar",
     "type": "checkbox",
     "defaultValue": true
   },
   {
-    "property": "mod.floaty.enable-findbar",
+    "property": "mod.floaty.use-floating-findbar",
     "label": "Floating Findbar",
     "type": "checkbox",
     "defaultValue": true
   },
   {
-    "property": "mod.floaty.enable-statuspanel",
+    "property": "mod.floaty.use-floating-statuspanel",
     "label": "Floating Statuspanel",
     "type": "checkbox",
     "defaultValue": true
   },
   {
-    "property": "mod.floaty.enable-blur",
+    "property": "mod.floaty.use-blur",
     "label": "Background Blur",
     "type": "checkbox",
     "defaultValue": true
   },
   {
-    "property": "mod.floaty.enable-opacity",
+    "property": "mod.floaty.use-transparency",
     "label": "Background Transparency",
     "type": "checkbox",
     "defaultValue": true
   },
   {
-    "property": "mod.floaty.enable-animation",
+    "property": "mod.floaty.use-animation",
     "label": "Sidebar & Topbar Animation",
     "type": "checkbox",
     "defaultValue": true
