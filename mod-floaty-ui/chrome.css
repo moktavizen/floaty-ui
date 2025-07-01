@@ -47,6 +47,9 @@
     --floaty-bg-color: #1e1e1eb8;
   }
 
+  @media not (-moz-bool-pref: "mod.floaty.use-blur") {
+    --floaty-blur-filter: none;
+  }
   /* Enable blur on Compact Mode */
   .browserSidebarContainer {
     will-change: transform !important;
