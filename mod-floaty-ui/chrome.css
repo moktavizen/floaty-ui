@@ -9,6 +9,7 @@
   --floaty-toolbox-padding: 0.35rem;
   --floaty-border-width: 1px;
   --floaty-border-radius: 12px;
+  --floaty-animation-duration: var(--mod-floaty-animation-duration);
 
   --floaty-blur-filter: blur(var(--floaty-blur-radius))
     saturate(var(--floaty-blur-saturation));
@@ -59,6 +60,10 @@
     }
   }
 
+  @media (not (-moz-bool-pref: "mod.floaty.use-animation")) or (prefers-reduced-motion) {
+    --floaty-animation-duration: 0s;
+  }
+
   /* Enable blur on Compact Mode */
   .browserSidebarContainer {
     will-change: transform !important;
@@ -73,7 +78,7 @@
     @media (-moz-bool-pref: "zen.view.use-single-toolbar") or (-moz-bool-pref: "zen.view.compact.hide-tabbar") {
       #navigator-toolbox {
         padding: var(--floaty-sidebar-margin) !important;
-        transition-duration: 100ms !important;
+        transition-duration: var(--floaty-animation-duration) !important;
 
         &:not([zen-right-side="true"]) {
           padding-left: var(--floaty-sidebar-margin-total) !important;
@@ -119,7 +124,7 @@
         height: auto !important;
         opacity: 1 !important;
         top: var(--floaty-bookmark-offset) !important;
-        transition: top 0.15s ease-in-out !important;
+        transition: top var(--floaty-animation-duration) ease-in-out !important;
 
         &[zen-has-hover="true"],
         &[has-popup-menu],
@@ -174,6 +179,7 @@
 
       #PersonalToolbar {
         padding-inline: var(--floaty-toolbox-padding) !important;
+        transition-duration: var(--floaty-animation-duration) !important;
       }
 
       .titlebar-buttonbox-container {
@@ -192,6 +198,7 @@
         padding: var(--floaty-separation-margin) !important;
         padding-bottom: var(--floaty-margin) !important;
         padding-top: calc(var(--floaty-separation-margin) + 1px) !important;
+        transition-duration: var(--floaty-animation-duration) !important;
 
         &:not([zen-has-hover="true"]) {
           #urlbar:not([breakout-extend="true"]) {
@@ -240,6 +247,7 @@
 
       #PersonalToolbar {
         padding-inline: var(--floaty-toolbox-padding) !important;
+        transition-duration: var(--floaty-animation-duration) !important;
       }
 
       #urlbar[breakout-extend="true"]:not([zen-floating-urlbar="true"]) {
@@ -287,7 +295,6 @@
       inset: var(--floaty-findbar-top-margin) var(--floaty-margin) auto !important;
       margin-inline-start: auto !important;
       padding: var(--floaty-toolbox-padding) !important;
-      transition: none !important;
 
       &::after {
         content: "" !important;
@@ -301,11 +308,6 @@
       }
     }
 
-    .findbar-container,
-    .findbar-closebutton {
-      transition: none !important;
-    }
-
     .findbar-textbox {
       background: var(--zen-toolbar-element-bg) !important;
       border: var(--toolbarbutton-outline) !important;
@@ -315,6 +317,13 @@
 
     .findbar-find-status {
       display: none !important;
+    }
+
+    findbar,
+    .findbar-container,
+    .findbar-closebutton {
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
     }
   }
 
