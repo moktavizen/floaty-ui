@@ -1,6 +1,8 @@
 /* Only apply this CSS in Compact Mode */
 :root[zen-compact-mode="true"]:not([customizing]) {
   --floaty-bg-color: var(--zen-main-browser-background);
+  --floaty-bg-light: #ebebeb;
+  --floaty-bg-dark: #1e1e1e;
   --floaty-blur-radius: 32px;
   --floaty-blur-saturation: 128%;
   --floaty-margin: var(--mod-floaty-margin);
@@ -45,7 +47,10 @@
 
   /* Fallback when there are no colors from zen theme */
   &:not([zen-should-be-dark-mode]) {
-    --floaty-bg-color: #1e1e1eb8;
+    --floaty-bg-color: light-dark(
+      rgb(from var(--floaty-bg-light) r g b / 0.72),
+      rgb(from var(--floaty-bg-dark) r g b / 0.72)
+    );
   }
 
   @media not (-moz-bool-pref: "mod.floaty.use-blur") {
@@ -56,7 +61,10 @@
     --floaty-bg-color: var(--zen-main-browser-background-toolbar);
 
     &:not([zen-should-be-dark-mode]) {
-      --floaty-bg-color: #1e1e1e;
+      --floaty-bg-color: light-dark(
+        var(--floaty-bg-light),
+        var(--floaty-bg-dark)
+      );
     }
   }
 
@@ -64,7 +72,7 @@
     --floaty-animation-duration: 0s;
   }
 
-  /* Enable blur on Compact Mode */
+  /* Allow blur on Compact Mode */
   .browserSidebarContainer {
     will-change: transform !important;
     backface-visibility: hidden !important;
