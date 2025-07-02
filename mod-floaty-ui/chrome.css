@@ -132,10 +132,6 @@
           top: 0px !important;
         }
 
-        &:not([zen-has-hover="true"]) {
-          transition-delay: 0.1s !important;
-        }
-
         @media (-moz-bool-pref: "zen.view.experimental-no-window-controls") {
           &:has(#PersonalToolbar[collapsed="true"]) {
             display: none !important;
