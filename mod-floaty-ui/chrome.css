@@ -362,4 +362,20 @@
       margin: 0px !important;
     }
   }
+
+  &[zen-should-be-dark-mode="false"] {
+    #urlbar,
+    findbar,
+    #statuspanel-label {
+      color-scheme: light !important;
+    }
+  }
+
+  &[zen-should-be-dark-mode="true"] #urlbar {
+    #urlbar,
+    findbar,
+    #statuspanel-label {
+      color-scheme: dark !important;
+    }
+  }
 }
