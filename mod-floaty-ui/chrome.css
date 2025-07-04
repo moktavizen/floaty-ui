@@ -166,6 +166,10 @@
             display: none !important;
           }
         }
+
+        @media (-moz-bool-pref: "mod.floaty.use-always-hide-topbar-in-single-toolbar-layout") {
+          display: none !important;
+        }
       }
 
       #zen-appcontent-navbar-container {

@@ -48,6 +48,12 @@
     "defaultValue": true
   },
   {
+    "property": "mod.floaty.use-always-hide-topbar-in-single-toolbar-layout",
+    "label": "Always Hide Topbar in Single Toolbar Layout",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
     "property": "mod.floaty.margin",
     "label": "Floating Margin",
     "type": "string",
