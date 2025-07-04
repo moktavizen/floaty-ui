@@ -164,8 +164,8 @@
           content: "" !important;
           position: absolute !important;
           inset: 0px !important;
-          mix-blend-mode: normal !important;
           opacity: 1 !important;
+          mix-blend-mode: normal !important;
           z-index: -1 !important;
         }
 
@@ -227,8 +227,8 @@
           content: "" !important;
           position: absolute !important;
           inset: 0px !important;
-          mix-blend-mode: normal !important;
           opacity: 1 !important;
+          mix-blend-mode: normal !important;
           z-index: -1 !important;
         }
 
@@ -376,6 +376,21 @@
     findbar,
     #statuspanel-label {
       color-scheme: dark !important;
+    }
+  }
+
+  /* Background grain toggle */
+  /* High CPU during testing  */
+  /* https://github.com/zen-browser/desktop/issues/6302 */
+  @media not (-moz-bool-pref: "mod.floaty.use-grain") {
+    #zen-browser-grain,
+    #PanelUI-zen-gradient-generator-texture-wrapper::before,
+    #titlebar::after,
+    #zen-appcontent-navbar-container::after,
+    #urlbar[breakout-extend="true"] > #urlbar-background::after,
+    findbar::after,
+    #statuspanel::after {
+      display: none !important;
     }
   }
 }
