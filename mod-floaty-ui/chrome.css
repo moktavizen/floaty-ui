@@ -53,10 +53,6 @@
     );
   }
 
-  @media not (-moz-bool-pref: "mod.floaty.use-blur") {
-    --floaty-blur-filter: none;
-  }
-
   @media not (-moz-bool-pref: "mod.floaty.use-transparency") {
     --floaty-bg-color: var(--zen-main-browser-background-toolbar);
 
@@ -68,17 +64,42 @@
     }
   }
 
-  @media (not (-moz-bool-pref: "mod.floaty.use-animation")) or (prefers-reduced-motion) {
-    --floaty-animation-duration: 0s;
-  }
-
   /* Allow blur on Compact Mode */
   .browserSidebarContainer {
     will-change: transform !important;
     backface-visibility: hidden !important;
   }
 
+  @media not (-moz-bool-pref: "mod.floaty.use-blur") {
+    --floaty-blur-filter: none;
+
+    .browserSidebarContainer {
+      will-change: auto !important;
+      backface-visibility: visible !important;
+    }
+  }
+
+  @media (not (-moz-bool-pref: "mod.floaty.use-animation")) or (prefers-reduced-motion) {
+    --floaty-animation-duration: 0s;
+  }
+
   /* THEME -------------------------------------------------------------------*/
+
+  &[zen-should-be-dark-mode="false"] {
+    #urlbar,
+    findbar,
+    #statuspanel-label {
+      color-scheme: light !important;
+    }
+  }
+
+  &[zen-should-be-dark-mode="true"] #urlbar {
+    #urlbar,
+    findbar,
+    #statuspanel-label {
+      color-scheme: dark !important;
+    }
+  }
 
   /* SIDEBAR ---------------------------------------------------------------- */
 
@@ -360,22 +381,6 @@
       padding: 0px !important;
       border: 0px !important;
       margin: 0px !important;
-    }
-  }
-
-  &[zen-should-be-dark-mode="false"] {
-    #urlbar,
-    findbar,
-    #statuspanel-label {
-      color-scheme: light !important;
-    }
-  }
-
-  &[zen-should-be-dark-mode="true"] #urlbar {
-    #urlbar,
-    findbar,
-    #statuspanel-label {
-      color-scheme: dark !important;
     }
   }
 
