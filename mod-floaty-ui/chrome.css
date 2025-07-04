@@ -324,6 +324,7 @@
       inset: var(--floaty-findbar-top-margin) var(--floaty-margin) auto !important;
       margin-inline-start: auto !important;
       padding: var(--floaty-toolbox-padding) !important;
+      color-scheme: unset !important;
 
       &::after {
         content: "" !important;
@@ -385,6 +386,7 @@
       padding: 0px !important;
       border: 0px !important;
       margin: 0px !important;
+      color-scheme: unset !important;
     }
   }
 
