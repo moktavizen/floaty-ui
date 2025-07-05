@@ -24,6 +24,36 @@
     "defaultValue": true
   },
   {
+    "property": "mod.floaty.use-themed-sidebar",
+    "label": "Themed Sidebar",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.floaty.use-themed-topbar",
+    "label": "Themed Topbar",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.floaty.use-themed-urlbar",
+    "label": "Themed URL bar",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.floaty.use-themed-findbar",
+    "label": "Themed Findbar",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.floaty.use-themed-statuspanel",
+    "label": "Themed Statuspanel",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
     "property": "mod.floaty.use-blur",
     "label": "Background Blur",
     "type": "checkbox",

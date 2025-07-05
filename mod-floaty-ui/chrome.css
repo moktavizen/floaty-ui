@@ -1,6 +1,6 @@
 /* Only apply this CSS in Compact Mode */
 :root[zen-compact-mode="true"]:not([customizing]) {
-  --floaty-bg-color: var(--zen-main-browser-background);
+  --floaty-bg-theme: var(--zen-main-browser-background);
   --floaty-bg-default: light-dark(#ebebeb, #1e1e1e);
   --floaty-blur-radius: 32px;
   --floaty-blur-saturation: 128%;
@@ -47,14 +47,14 @@
 
   /* Fallback when there are no colors from zen theme */
   &:not([zen-should-be-dark-mode]) {
-    --floaty-bg-color: rgb(from var(--floaty-bg-default) r g b / 0.72);
+    --floaty-bg-theme: rgb(from var(--floaty-bg-default) r g b / 0.72);
   }
 
   @media not (-moz-bool-pref: "mod.floaty.use-transparency") {
-    --floaty-bg-color: var(--zen-main-browser-background-toolbar);
+    --floaty-bg-theme: var(--zen-main-browser-background-toolbar);
 
     &:not([zen-should-be-dark-mode]) {
-      --floaty-bg-color: var(--floaty-bg-default);
+      --floaty-bg-theme: var(--floaty-bg-default);
     }
   }
 
@@ -76,24 +76,6 @@
   @media not (-moz-bool-pref: "mod.floaty.use-animation"),
     (prefers-reduced-motion) {
     --floaty-animation-duration: 0s;
-  }
-
-  /* THEME -------------------------------------------------------------------*/
-
-  &[zen-should-be-dark-mode="false"] {
-    #urlbar,
-    findbar,
-    #statuspanel-label {
-      color-scheme: light !important;
-    }
-  }
-
-  &[zen-should-be-dark-mode="true"] #urlbar {
-    #urlbar,
-    findbar,
-    #statuspanel-label {
-      color-scheme: dark !important;
-    }
   }
 
   /* SIDEBAR ---------------------------------------------------------------- */
@@ -124,34 +106,15 @@
           outline: none !important;
         }
 
-        &::after {
-          background-image: none !important;
-          opacity: 1 !important;
-          mix-blend-mode: normal !important;
-        }
-
         &::before {
           content: "" !important;
           position: absolute !important;
           inset: 0px !important;
           z-index: -1 !important;
           pointer-events: none !important;
-          background: var(--floaty-bg-color) !important;
-          backdrop-filter: var(--floaty-blur-filter) !important;
           border: var(--floaty-border-style) !important;
           border-radius: var(--floaty-border-radius) !important;
           box-shadow: var(--zen-big-shadow) !important;
-        }
-
-        &::after {
-          content: "" !important;
-          position: absolute !important;
-          inset: 0 !important;
-          z-index: 0 !important;
-          pointer-events: none !important;
-          background-image: var(--grain-bg-url) !important;
-          opacity: var(--zen-grainy-background-opacity, 0) !important;
-          border-radius: var(--floaty-border-radius) !important;
         }
       }
     }
@@ -176,33 +139,14 @@
         border-radius: var(--floaty-border-radius) !important;
 
         &::before {
-          background-image: none !important;
-          opacity: 1 !important;
-          mix-blend-mode: normal !important;
-        }
-
-        &::before {
           content: "" !important;
           position: absolute !important;
           inset: 0px !important;
           z-index: -1 !important;
           pointer-events: none !important;
-          background: var(--floaty-bg-color) !important;
-          backdrop-filter: var(--floaty-blur-filter) !important;
           border: var(--floaty-border-style) !important;
           border-radius: var(--floaty-border-radius) !important;
           box-shadow: var(--zen-big-shadow) !important;
-        }
-
-        &::after {
-          content: "" !important;
-          position: absolute !important;
-          inset: 0 !important;
-          z-index: 0 !important;
-          pointer-events: none !important;
-          background-image: var(--grain-bg-url) !important;
-          opacity: var(--zen-grainy-background-opacity, 0) !important;
-          border-radius: var(--floaty-border-radius) !important;
         }
       }
 
@@ -283,22 +227,6 @@
 
   /* URL BAR ---------------------------------------------------------------- */
 
-  #urlbar[breakout-extend="true"] > #urlbar-background {
-    background: var(--floaty-bg-color) !important;
-    backdrop-filter: var(--floaty-blur-filter) !important;
-
-    &::after {
-      content: "" !important;
-      position: absolute !important;
-      inset: 0 !important;
-      z-index: 0 !important;
-      pointer-events: none !important;
-      background-image: var(--grain-bg-url) !important;
-      opacity: var(--zen-grainy-background-opacity, 0) !important;
-      border-radius: var(--floaty-border-radius) !important;
-    }
-  }
-
   .urlbarView-body-inner {
     border-top: var(--floaty-border-style) !important;
   }
@@ -312,23 +240,9 @@
       inset: var(--floaty-findbar-top-margin) var(--floaty-margin) auto !important;
       margin-inline-start: auto !important;
       padding: var(--floaty-toolbox-padding) !important;
-      color-scheme: unset !important;
-      background: var(--floaty-bg-color) !important;
-      backdrop-filter: var(--floaty-blur-filter) !important;
       border: var(--floaty-border-style) !important;
       border-radius: var(--floaty-border-radius) !important;
       box-shadow: var(--zen-big-shadow) !important;
-
-      &::after {
-        content: "" !important;
-        position: absolute !important;
-        inset: 0 !important;
-        z-index: 0 !important;
-        pointer-events: none !important;
-        background-image: var(--grain-bg-url) !important;
-        opacity: var(--zen-grainy-background-opacity, 0) !important;
-        border-radius: var(--floaty-border-radius) !important;
-      }
     }
 
     .findbar-textbox {
@@ -356,12 +270,144 @@
     #statuspanel-label {
       padding: 2px 9px !important;
       margin: var(--floaty-margin) !important;
-      color-scheme: unset !important;
-      background: var(--floaty-bg-color) !important;
-      backdrop-filter: var(--floaty-blur-filter) !important;
       border: var(--floaty-border-style) !important;
       border-radius: var(--floaty-border-radius) !important;
       box-shadow: var(--zen-big-shadow) !important;
+    }
+  }
+
+  /* THEME -------------------------------------------------------------------*/
+
+  &[zen-should-be-dark-mode="false"] {
+    #urlbar,
+    findbar,
+    #statuspanel-label {
+      color-scheme: light !important;
+    }
+  }
+
+  &[zen-should-be-dark-mode="true"] #urlbar {
+    #urlbar,
+    findbar,
+    #statuspanel-label {
+      color-scheme: dark !important;
+    }
+  }
+
+  #titlebar::after {
+    background-image: none !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+  }
+
+  #titlebar::before {
+    background: var(--floaty-bg-default) !important;
+  }
+
+  @media (-moz-bool-pref: "mod.floaty.use-themed-sidebar") {
+    #titlebar {
+      &::before {
+        background: var(--floaty-bg-theme) !important;
+        backdrop-filter: var(--floaty-blur-filter) !important;
+      }
+
+      &::after {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 0 !important;
+        pointer-events: none !important;
+        background-image: var(--grain-bg-url) !important;
+        opacity: var(--zen-grainy-background-opacity, 0) !important;
+        border-radius: var(--floaty-border-radius) !important;
+      }
+    }
+  }
+
+  #zen-appcontent-navbar-container::before {
+    background-image: none !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+  }
+
+  #zen-appcontent-navbar-container::before {
+    background: var(--floaty-bg-default) !important;
+  }
+
+  @media (-moz-bool-pref: "mod.floaty.use-themed-topbar") {
+    #zen-appcontent-navbar-container {
+      &::before {
+        background: var(--floaty-bg-theme) !important;
+        backdrop-filter: var(--floaty-blur-filter) !important;
+      }
+
+      &::after {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 0 !important;
+        pointer-events: none !important;
+        background-image: var(--grain-bg-url) !important;
+        opacity: var(--zen-grainy-background-opacity, 0) !important;
+        border-radius: var(--floaty-border-radius) !important;
+      }
+    }
+  }
+
+  #urlbar[breakout-extend="true"] > #urlbar-background {
+    background: var(--floaty-bg-default) !important;
+  }
+
+  @media (-moz-bool-pref: "mod.floaty.use-themed-urlbar") {
+    #urlbar[breakout-extend="true"] > #urlbar-background {
+      background: var(--floaty-bg-theme) !important;
+      backdrop-filter: var(--floaty-blur-filter) !important;
+
+      &::after {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 0 !important;
+        pointer-events: none !important;
+        background-image: var(--grain-bg-url) !important;
+        opacity: var(--zen-grainy-background-opacity, 0) !important;
+        border-radius: var(--floaty-border-radius) !important;
+      }
+    }
+  }
+
+  findbar {
+    background: var(--floaty-bg-default) !important;
+  }
+
+  @media (-moz-bool-pref: "mod.floaty.use-themed-findbar") {
+    findbar {
+      color-scheme: unset !important;
+      background: var(--floaty-bg-theme) !important;
+      backdrop-filter: var(--floaty-blur-filter) !important;
+
+      &::after {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 0 !important;
+        pointer-events: none !important;
+        background-image: var(--grain-bg-url) !important;
+        opacity: var(--zen-grainy-background-opacity, 0) !important;
+        border-radius: var(--floaty-border-radius) !important;
+      }
+    }
+  }
+
+  #statuspanel-label {
+    background: var(--floaty-bg-default) !important;
+  }
+
+  @media (-moz-bool-pref: "mod.floaty.use-themed-statuspanel") {
+    #statuspanel-label {
+      color-scheme: unset !important;
+      background: var(--floaty-bg-theme) !important;
+      backdrop-filter: var(--floaty-blur-filter) !important;
     }
   }
 
