@@ -104,7 +104,8 @@
   /* SIDEBAR ---------------------------------------------------------------- */
 
   @media (-moz-bool-pref: "mod.floaty.use-floating-sidebar") {
-    @media (-moz-bool-pref: "zen.view.use-single-toolbar") or (-moz-bool-pref: "zen.view.compact.hide-tabbar") {
+    @media (-moz-bool-pref: "zen.view.use-single-toolbar"),
+      (not (-moz-bool-pref: "zen.view.use-single-toolbar")) and (-moz-bool-pref: "zen.view.compact.hide-tabbar") {
       #navigator-toolbox {
         padding: var(--floaty-sidebar-margin) !important;
         transition-duration: var(--floaty-animation-duration) !important;
@@ -143,12 +144,55 @@
   /* TOPBAR ----------------------------------------------------------------- */
 
   @media (-moz-bool-pref: "mod.floaty.use-floating-topbar") {
-    @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
+    @media (-moz-bool-pref: "zen.view.use-single-toolbar"),
+      (not (-moz-bool-pref: "zen.view.use-single-toolbar")) and (-moz-bool-pref: "zen.view.compact.hide-toolbar") {
       #zen-appcontent-navbar-wrapper {
         box-sizing: border-box !important;
         position: fixed !important;
         padding: var(--floaty-separation-margin) !important;
         padding-bottom: var(--floaty-margin) !important;
+      }
+
+      #zen-appcontent-navbar-container {
+        box-sizing: border-box !important;
+        position: relative !important;
+        padding: var(--floaty-toolbox-padding) !important;
+        border-radius: var(--floaty-border-radius) !important;
+
+        &::before {
+          background: var(--floaty-bg-color) !important;
+          backdrop-filter: var(--floaty-blur-filter) !important;
+          border: var(--floaty-border-style) !important;
+          border-radius: var(--floaty-border-radius) !important;
+          box-shadow: var(--zen-big-shadow) !important;
+          content: "" !important;
+          position: absolute !important;
+          inset: 0px !important;
+          opacity: 1 !important;
+          mix-blend-mode: normal !important;
+          z-index: -1 !important;
+        }
+
+        &::after {
+          content: "" !important;
+          position: absolute !important;
+          inset: 0 !important;
+          background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
+          pointer-events: none !important;
+          z-index: 0 !important;
+          opacity: var(--zen-grainy-background-opacity, 0) !important;
+          border-radius: var(--floaty-border-radius) !important;
+        }
+      }
+
+      #PersonalToolbar {
+        padding-inline: var(--floaty-toolbox-padding) !important;
+        transition-duration: var(--floaty-animation-duration) !important;
+      }
+    }
+
+    @media (-moz-bool-pref: "zen.view.use-single-toolbar") {
+      #zen-appcontent-navbar-wrapper {
         width: 100% !important;
         height: auto !important;
         opacity: 1 !important;
@@ -173,42 +217,8 @@
       }
 
       #zen-appcontent-navbar-container {
-        box-sizing: border-box !important;
-        position: relative !important;
-        padding: var(--floaty-toolbox-padding) !important;
-        border-radius: var(--floaty-border-radius) !important;
         opacity: 1 !important;
         min-height: var(--floaty-bookmark-height) !important;
-
-        &::before {
-          background: var(--floaty-bg-color) !important;
-          backdrop-filter: var(--floaty-blur-filter) !important;
-          border: var(--floaty-border-style) !important;
-          border-radius: var(--floaty-border-radius) !important;
-          box-shadow: var(--zen-big-shadow) !important;
-          content: "" !important;
-          position: absolute !important;
-          inset: 0px !important;
-          opacity: 1 !important;
-          mix-blend-mode: normal !important;
-          z-index: -1 !important;
-        }
-
-        &::after {
-          content: "" !important;
-          position: absolute !important;
-          inset: 0 !important;
-          background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
-          pointer-events: none !important;
-          z-index: 0 !important;
-          opacity: var(--zen-grainy-background-opacity, 0) !important;
-          border-radius: var(--floaty-border-radius) !important;
-        }
-      }
-
-      #PersonalToolbar {
-        padding-inline: var(--floaty-toolbox-padding) !important;
-        transition-duration: var(--floaty-animation-duration) !important;
       }
 
       .titlebar-buttonbox-container {
@@ -222,10 +232,6 @@
 
     @media (not (-moz-bool-pref: "zen.view.use-single-toolbar")) and (-moz-bool-pref: "zen.view.compact.hide-toolbar") {
       #zen-appcontent-navbar-wrapper {
-        box-sizing: border-box !important;
-        position: fixed !important;
-        padding: var(--floaty-separation-margin) !important;
-        padding-bottom: var(--floaty-margin) !important;
         padding-top: calc(var(--floaty-separation-margin) + 1px) !important;
         transition-duration: var(--floaty-animation-duration) !important;
 
@@ -237,46 +243,12 @@
       }
 
       #zen-appcontent-navbar-container {
-        box-sizing: border-box !important;
-        position: relative !important;
-        padding: var(--floaty-toolbox-padding) !important;
-        border-radius: var(--floaty-border-radius) !important;
         background: transparent !important;
-
-        &::before {
-          background: var(--floaty-bg-color) !important;
-          backdrop-filter: var(--floaty-blur-filter) !important;
-          border: var(--floaty-border-style) !important;
-          border-radius: var(--floaty-border-radius) !important;
-          box-shadow: var(--zen-big-shadow) !important;
-          content: "" !important;
-          position: absolute !important;
-          inset: 0px !important;
-          opacity: 1 !important;
-          mix-blend-mode: normal !important;
-          z-index: -1 !important;
-        }
-
-        &::after {
-          content: "" !important;
-          position: absolute !important;
-          inset: 0 !important;
-          background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
-          pointer-events: none !important;
-          z-index: 0 !important;
-          opacity: var(--zen-grainy-background-opacity, 0) !important;
-          border-radius: var(--floaty-border-radius) !important;
-        }
       }
 
       #nav-bar {
         margin-left: calc(var(--floaty-toolbox-padding) + 4px) !important;
         margin-right: var(--floaty-toolbox-padding) !important;
-      }
-
-      #PersonalToolbar {
-        padding-inline: var(--floaty-toolbox-padding) !important;
-        transition-duration: var(--floaty-animation-duration) !important;
       }
 
       #urlbar[breakout-extend="true"]:not([zen-floating-urlbar="true"]) {
