@@ -356,22 +356,12 @@
     #statuspanel-label {
       padding: 2px 9px !important;
       margin: var(--floaty-margin) !important;
+      color-scheme: unset !important;
       background: var(--floaty-bg-color) !important;
       backdrop-filter: var(--floaty-blur-filter) !important;
       border: var(--floaty-border-style) !important;
       border-radius: var(--floaty-border-radius) !important;
       box-shadow: var(--zen-big-shadow) !important;
-
-      &::after {
-        content: "" !important;
-        position: absolute !important;
-        inset: 0 !important;
-        z-index: 0 !important;
-        pointer-events: none !important;
-        background-image: var(--grain-bg-url) !important;
-        opacity: var(--zen-grainy-background-opacity, 0) !important;
-        border-radius: var(--floaty-border-radius) !important;
-      }
     }
   }
 
@@ -384,8 +374,7 @@
     #titlebar::after,
     #zen-appcontent-navbar-container::after,
     #urlbar[breakout-extend="true"] > #urlbar-background::after,
-    findbar::after,
-    #statuspanel::after {
+    findbar::after {
       display: none !important;
     }
   }
