@@ -79,7 +79,8 @@
     }
   }
 
-  @media (not (-moz-bool-pref: "mod.floaty.use-animation")) or (prefers-reduced-motion) {
+  @media not (-moz-bool-pref: "mod.floaty.use-animation"),
+    (prefers-reduced-motion) {
     --floaty-animation-duration: 0s;
   }
 
