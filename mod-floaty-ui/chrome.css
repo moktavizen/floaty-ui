@@ -353,7 +353,7 @@
   /* STATUS PANEL ----------------------------------------------------------- */
 
   @media (-moz-bool-pref: "mod.floaty.use-floating-statuspanel") {
-    #statuspanel {
+    #statuspanel-label {
       padding: 2px 9px !important;
       margin: var(--floaty-margin) !important;
       background: var(--floaty-bg-color) !important;
@@ -372,14 +372,6 @@
         opacity: var(--zen-grainy-background-opacity, 0) !important;
         border-radius: var(--floaty-border-radius) !important;
       }
-    }
-
-    #statuspanel-label {
-      background: transparent !important;
-      padding: 0px !important;
-      border: 0px !important;
-      margin: 0px !important;
-      color-scheme: unset !important;
     }
   }
 
