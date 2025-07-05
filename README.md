@@ -11,7 +11,7 @@ Floating Mode for Zen Browser! This mod will turn Compact Mode into Floating Mod
 ### Manual
 
 1. Export your mod list from `Settings > Zen Mods > Export Mods`
-2. Open the exported `json` and add the following
+2. Edit the exported JSON and add
 
     ```json
     "mod-floaty-ui": {
@@ -32,7 +32,7 @@ Floating Mode for Zen Browser! This mod will turn Compact Mode into Floating Mod
     }
     ```
 
-    The structure should be like this
+    The structure should look like this
 
     ```json
     {
@@ -45,12 +45,9 @@ Floating Mode for Zen Browser! This mod will turn Compact Mode into Floating Mod
     }
     ```
 
-3. Open your [`profile folder`](https://docs.zen-browser.app/guides/live-editing#step-1-access-the-profile-folder)
-4. Replace the content of `zen-theme.json` with the content of the exported `json`
-5. Open your [`chrome folder`](https://docs.zen-browser.app/guides/live-editing#step-2-create-the-chrome-folder)
-6. Copy and paste `mod-floaty-ui folder` into `zen-themes folder`
-7. Restart Zen Browser
-8. Enable the mod from `Settings > Zen Mods`
+3. Replace the content of `zen-theme.json` in your [profile folder](https://docs.zen-browser.app/guides/live-editing#step-1-access-the-profile-folder) with the edited JSON
+4. Copy `mod-floaty-ui` folder into `zen-themes` folder inside your [chrome folder](https://docs.zen-browser.app/guides/live-editing#step-2-create-the-chrome-folder)
+5. Restart Zen Browser and enable it from `Settings > Zen Mods`
 
 ## Uninstall
 
