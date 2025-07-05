@@ -11,6 +11,7 @@
   --floaty-border-width: 1px;
   --floaty-border-radius: 12px;
   --floaty-animation-duration: var(--mod-floaty-animation-duration);
+  --grain-bg-url: url(chrome://browser/content/zen-images/grain-bg.png);
 
   --floaty-blur-filter: blur(var(--floaty-blur-radius))
     saturate(var(--floaty-blur-saturation));
@@ -120,16 +121,37 @@
         border-radius: var(--floaty-border-radius) !important;
 
         &::before {
+          outline: none !important;
+        }
+
+        &::after {
+          background-image: none !important;
+          opacity: 1 !important;
+          mix-blend-mode: normal !important;
+        }
+
+        &::before {
+          content: "" !important;
+          position: absolute !important;
+          inset: 0px !important;
+          z-index: -1 !important;
+          pointer-events: none !important;
           background: var(--floaty-bg-color) !important;
           backdrop-filter: var(--floaty-blur-filter) !important;
           border: var(--floaty-border-style) !important;
           border-radius: var(--floaty-border-radius) !important;
           box-shadow: var(--zen-big-shadow) !important;
-          outline: none !important;
         }
 
         &::after {
-          mix-blend-mode: normal !important;
+          content: "" !important;
+          position: absolute !important;
+          inset: 0 !important;
+          z-index: 0 !important;
+          pointer-events: none !important;
+          background-image: var(--grain-bg-url) !important;
+          opacity: var(--zen-grainy-background-opacity, 0) !important;
+          border-radius: var(--floaty-border-radius) !important;
         }
       }
     }
@@ -154,26 +176,31 @@
         border-radius: var(--floaty-border-radius) !important;
 
         &::before {
+          background-image: none !important;
+          opacity: 1 !important;
+          mix-blend-mode: normal !important;
+        }
+
+        &::before {
+          content: "" !important;
+          position: absolute !important;
+          inset: 0px !important;
+          z-index: -1 !important;
+          pointer-events: none !important;
           background: var(--floaty-bg-color) !important;
           backdrop-filter: var(--floaty-blur-filter) !important;
           border: var(--floaty-border-style) !important;
           border-radius: var(--floaty-border-radius) !important;
           box-shadow: var(--zen-big-shadow) !important;
-          content: "" !important;
-          position: absolute !important;
-          inset: 0px !important;
-          opacity: 1 !important;
-          mix-blend-mode: normal !important;
-          z-index: -1 !important;
         }
 
         &::after {
           content: "" !important;
           position: absolute !important;
           inset: 0 !important;
-          background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
-          pointer-events: none !important;
           z-index: 0 !important;
+          pointer-events: none !important;
+          background-image: var(--grain-bg-url) !important;
           opacity: var(--zen-grainy-background-opacity, 0) !important;
           border-radius: var(--floaty-border-radius) !important;
         }
@@ -264,9 +291,9 @@
       content: "" !important;
       position: absolute !important;
       inset: 0 !important;
-      background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
-      pointer-events: none !important;
       z-index: 0 !important;
+      pointer-events: none !important;
+      background-image: var(--grain-bg-url) !important;
       opacity: var(--zen-grainy-background-opacity, 0) !important;
       border-radius: var(--floaty-border-radius) !important;
     }
@@ -280,25 +307,25 @@
 
   @media (-moz-bool-pref: "mod.floaty.use-floating-findbar") {
     findbar {
-      background: var(--floaty-bg-color) !important;
-      backdrop-filter: var(--floaty-blur-filter) !important;
-      border: var(--floaty-border-style) !important;
-      border-radius: var(--floaty-border-radius) !important;
-      box-shadow: var(--zen-big-shadow) !important;
       max-width: var(--floaty-findbar-max-width) !important;
       position: fixed !important;
       inset: var(--floaty-findbar-top-margin) var(--floaty-margin) auto !important;
       margin-inline-start: auto !important;
       padding: var(--floaty-toolbox-padding) !important;
       color-scheme: unset !important;
+      background: var(--floaty-bg-color) !important;
+      backdrop-filter: var(--floaty-blur-filter) !important;
+      border: var(--floaty-border-style) !important;
+      border-radius: var(--floaty-border-radius) !important;
+      box-shadow: var(--zen-big-shadow) !important;
 
       &::after {
         content: "" !important;
         position: absolute !important;
         inset: 0 !important;
-        background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
-        pointer-events: none !important;
         z-index: 0 !important;
+        pointer-events: none !important;
+        background-image: var(--grain-bg-url) !important;
         opacity: var(--zen-grainy-background-opacity, 0) !important;
         border-radius: var(--floaty-border-radius) !important;
       }
@@ -327,21 +354,21 @@
 
   @media (-moz-bool-pref: "mod.floaty.use-floating-statuspanel") {
     #statuspanel {
+      padding: 2px 9px !important;
+      margin: var(--floaty-margin) !important;
       background: var(--floaty-bg-color) !important;
       backdrop-filter: var(--floaty-blur-filter) !important;
       border: var(--floaty-border-style) !important;
       border-radius: var(--floaty-border-radius) !important;
       box-shadow: var(--zen-big-shadow) !important;
-      padding: 2px 9px !important;
-      margin: var(--floaty-margin) !important;
 
       &::after {
         content: "" !important;
         position: absolute !important;
         inset: 0 !important;
-        background-image: url(chrome://browser/content/zen-images/grain-bg.png) !important;
-        pointer-events: none !important;
         z-index: 0 !important;
+        pointer-events: none !important;
+        background-image: var(--grain-bg-url) !important;
         opacity: var(--zen-grainy-background-opacity, 0) !important;
         border-radius: var(--floaty-border-radius) !important;
       }
