@@ -92,6 +92,7 @@
         position: fixed !important;
         padding: var(--floaty-separation-margin) !important;
         padding-bottom: var(--floaty-margin) !important;
+        width: 100% !important;
       }
 
       #zen-appcontent-navbar-container {
